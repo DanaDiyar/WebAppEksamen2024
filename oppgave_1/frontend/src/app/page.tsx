@@ -8,5 +8,3 @@ export default function Home() {
   );
 }
 import React from "react";
-
-// Test sjekke github funker

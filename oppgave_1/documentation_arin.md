@@ -14,3 +14,4 @@ I dette dokumentet skal vi gå gjennom hvilke typer:
 ### Informasjon om "app"
 1. Jeg så gjennom all.js filen og flyttet den nederste kodeblokken til en egen fil kalt app.js
 2. Flyttet Layout.tsx som var i app inn til Components
+3. Lagde filer under Pages folder for de ulike sidene for nettsiden

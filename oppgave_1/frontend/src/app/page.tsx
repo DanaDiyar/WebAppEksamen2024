@@ -1,4 +1,5 @@
-import All from "@/pages/All";
+import All from "@/pages/Course";
+import all from "@/pages/Courses";
 
 export default function Home() {
   return (

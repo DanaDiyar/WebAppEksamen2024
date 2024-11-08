@@ -1,6 +1,10 @@
 import { useState, useEffect } from "react";
 import {comments} from "../../data/comments";
 import { courses } from "@/data/courses";
+import "../../styles/css/main.css"
+import "../../styles/css/reset.css"
+
+
 
 
 const getLesson = async (courseSlug, lessonSlug) => {

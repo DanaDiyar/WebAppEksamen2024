@@ -1,3 +1,5 @@
+import '../styles/css/reset.css';
+import '../styles/css/main.css';
 
 export default function All() {
     return (

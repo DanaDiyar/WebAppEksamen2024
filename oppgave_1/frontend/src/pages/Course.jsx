@@ -1,7 +1,10 @@
+"use client";
+
 import { useState, useEffect } from "react";
-import { useParams, useRouter } from "next/navigation";
 import { courses } from "../data/courses";
 import { users } from "../data/users";
+import Lesson from "../components/Course/Lesson";
+
 
 const getCourse = async (slug) => {
     const data = await courses.filter((course) => course.slug === slug);

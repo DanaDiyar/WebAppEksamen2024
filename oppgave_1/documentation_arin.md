@@ -16,3 +16,4 @@ I dette dokumentet skal vi gå gjennom hvilke typer:
 2. Flyttet Layout.tsx som var i app inn til Components
 3. Lagde filer under Pages folder for de ulike sidene for nettsiden
 4. Så at det var en data.js med masse kode som kunne bli delt opp i andre filer i samme mappe for mer ryddig kode. Lagde da filer med de kodene og slettet da data.js filen. Lagde de i TS.
+5. Flyttet Courses koden fra all.js inn i egen fil Courses.tsx.

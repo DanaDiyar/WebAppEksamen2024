@@ -1,4 +1,4 @@
-import './pages/All'
+
 export default function All() {
     return (
       <div

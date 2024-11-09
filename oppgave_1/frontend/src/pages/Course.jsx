@@ -1,19 +1,15 @@
+
 "use client";
 
+
 import { useState, useEffect } from "react";
-import { courses } from "../data/courses";
 import { users } from "../data/users";
 import Lesson from "../components/Course/Lesson";
+import { getCourse } from "@/services/courseService";
 
-
-const getCourse = async (slug) => {
-    const data = await courses.filter((course) => course.slug === slug);
-    return data?.[0];
-  };
 
   function Course() {
     const [content, setContent] = useState(null);
-  
     const courseSlug = "javascript-101";
     const lessonSlug = "variabler";
   

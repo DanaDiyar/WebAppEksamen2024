@@ -1,36 +1,9 @@
 import { useState, useEffect } from "react";
-import {comments} from "../../data/comments";
-import { courses } from "@/data/courses";
 import "../../styles/css/main.css"
 import "../../styles/css/reset.css"
+import { getLesson, getComments, createComment, getCourse } from "../../services/courseService";
 
 
-
-
-const getLesson = async (courseSlug, lessonSlug) => {
-    const data = await courses
-      .flatMap(
-        (course) =>
-          course.slug === courseSlug &&
-          course.lessons.filter((lesson) => lesson.slug === lessonSlug)
-      )
-      .filter(Boolean);
-    return data?.[0];
-  };
-  
-  const getComments = async (lessonSlug) => {
-    const data = await comments.filter(
-      (comment) => comment.lesson.slug === lessonSlug
-    );
-    return data;
-  };
-  
-  const createComment = async (data) => {
-    await comments.push(data);
-  };
-  
-  
-  
   function Lesson() {
     const [success, setSuccess] = useState(false);
     const [formError, setFormError] = useState(false);

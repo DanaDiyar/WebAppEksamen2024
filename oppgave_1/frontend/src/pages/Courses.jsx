@@ -3,6 +3,7 @@ import { courses } from "../data/courses";
 import { categories } from "../data/categories";
 import { useParams, useRouter } from "next/navigation";
 
+
 function Courses() {
     const [value, setValue] = useState("");
     const [data, setData] = useState(courses);

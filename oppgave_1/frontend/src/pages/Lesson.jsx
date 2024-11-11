@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 import "../../styles/css/main.css"
-import "../../styles/css/reset.css"
-import { getLesson, getComments, createComment, getCourse } from "../../services/courseService";
-
+import { getLesson, getComments, createComment, getCourse } from "../services/courseService";
 
   function Lesson() {
     const [success, setSuccess] = useState(false);

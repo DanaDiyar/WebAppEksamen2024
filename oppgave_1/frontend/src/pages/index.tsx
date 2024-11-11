@@ -1,5 +1,5 @@
-import '../styles/css/reset.css';
 import '../styles/css/main.css';
+
 
 export default function All() {
     return (
@@ -10,13 +10,13 @@ export default function All() {
         <nav className="mt-6 mb-12 flex justify-between">
           <h1 className="text-lg font-bold uppercase" data-testid="logo">
             <a href="/">Mikro LMS</a>
-          </h1>
+          </h1> {/*  Hovedside main */}
           <ul className="flex gap-8" data-testid="nav">
             <li className="text-base font-semibold" data-testid="nav_courses">
-              <a href="kurs">Kurs</a>
+            <a href="/kurs/javascript-101/variabler">Kurs</a>
             </li>
             <li className="text-base font-semibold" data-testid="nav_new">
-              <a href="/ny">Nytt kurs</a>
+              <a href="/course">Nytt kurs</a>
             </li>
           </ul>
         </nav>

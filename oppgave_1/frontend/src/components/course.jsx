@@ -4,7 +4,7 @@
 
 import { useState, useEffect } from "react";
 import { users } from "../data/users";
-import Lesson from "./Lesson";
+import Lesson from "./lesson";
 import { getCourse } from "@/services/courseService";
 
 

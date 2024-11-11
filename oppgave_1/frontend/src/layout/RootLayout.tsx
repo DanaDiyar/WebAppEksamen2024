@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 
 // TODO: Kommenter ut om du ønsker å bruke .css
 
-import '../styles/scss/main.css'
+import '../styles/css/main.css'
 // TODO: Kommenter ut om du ikke ønsker å bruke tailwind
 //import "../styles/tailwind/main.css";
 
@@ -29,13 +29,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
-    </html>
+    <div className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      {children}
+    </div>
   );
 }
+
 import React from "react";

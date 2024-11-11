@@ -1,10 +1,12 @@
 import React from 'react';
 import Link from "next/link";
+import Layout from '../layout/RootLayout';
 
 
 
 export default function All() {
     return (
+      <Layout>
       <div
         className="mx-auto grid min-h-screen w-full max-w-7xl grid-rows-[auto_minmax(900px,_1fr)_30px]"
         data-testid="layout"
@@ -30,6 +32,7 @@ export default function All() {
           <p>99 00 00 00, mail@lms.no</p>
         </footer>
       </div>
+      </Layout>
     );
   }
   

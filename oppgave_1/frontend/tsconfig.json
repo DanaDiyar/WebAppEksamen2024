@@ -33,7 +33,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-, "src/pages/App.tsx", "src/pages/Lesson.jsx", "src/components/Create.jsx", "src/components/Signup.jsx", "src/pages/Course.jsx", "src/pages/Courses.jsx"  ],
+, "src/pages/App.tsx", "src/pages/Lesson.jsx", "src/components/Create.jsx", "src/components/Signup.jsx", "src/pages/course.jsx", "src/pages/courses.jsx"  ],
   "exclude": [
     "node_modules"
   ]

@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import "../../styles/css/main.css"
 import { getLesson, getComments, createComment, getCourse } from "../services/courseService";
 
   function Lesson() {

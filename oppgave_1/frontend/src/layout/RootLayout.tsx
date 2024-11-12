@@ -37,19 +37,19 @@ export default function RootLayout({
       >
         <nav className="mt-6 mb-12 flex justify-between">
           <h1 className="text-lg font-bold uppercase" data-testid="logo">
-            <Link href="/">Mikro LMS</Link>{/*  Hovedside main */}
+            <Link href="/">Mikro LMS</Link>
           </h1> 
           <ul className="flex gap-8" data-testid="nav">
             <li className="text-base font-semibold" data-testid="nav_courses">
-            <Link href="/courses">Kurs</Link>{/*  Side kurs */}
+            <Link href="/courses">Kurs</Link>
             </li>
             <li className="text-base font-semibold" data-testid="nav_new">
-            <Link href="/course">Nytt kurs</Link>{/*  nytt kurs */}
+            <Link href="/course">Nytt kurs</Link>
             </li>
           </ul>
         </nav>
         <main className="h-full">
-          <p>Siden er tom</p>
+          {children}  { /*SRC: kilde: https://chatgpt.com*/}
         </main>
         <footer className="flex justify-between" data-testid="footer">
           <p>Mikro LMS AS, 2024</p>

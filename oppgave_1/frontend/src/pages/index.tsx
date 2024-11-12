@@ -1,14 +1,12 @@
 import React from 'react';
-import Link from "next/link";
-import Layout from '../layout/RootLayout';
+import RootLayout from "../layout/RootLayout";
+import SignUp from "../components/signUp";
 
 
 
 export default function All() {
     return (
-      <Layout>
-      {/*innhold signup?*/ }
-      </Layout>
+        <SignUp />
     );
   }
   

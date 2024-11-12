@@ -19,3 +19,4 @@ I dette dokumentet skal vi gå gjennom hvilke typer:
 5. Flyttet Courses koden fra all.js inn i egen fil Courses.tsx.
 6. Gjorde det samme for Course.
 7. Opprettet Lesson.tsx i Course inni Components for å legge til kode fra all.js
+8. Jeg fikk ikke til å gå inn på de ulike kursene så jeg prøvde å få hjelp av AI for å vite hvor problemet lå. ble veiledet da til å lage kurs folder inni paged, og inni der lage slugs og courseslugs folders for å inneholde ulike dynamiske routers.

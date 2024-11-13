@@ -18,3 +18,330 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* SRC: kilde: https://chatgpt.com/ -- på hva de forskjellige kodene 
+ hentet fra kodeblokken er hvis overført til css.*/
+
+/*  Kode gjort hentet fra signUp.jsx for å fikse opp i styling.  */
+.sign_up_container {
+  max-width: 60rem;
+  margin: 0 auto; 
+}
+
+.title {
+  margin-bottom: 1rem; 
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form_label, .checkbox-label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.label_text, .checkbox_text {
+  margin-bottom: 0.25rem; 
+  font-weight: 600; 
+}
+
+.input, .checkbox {
+  border-radius: 0.25rem; 
+}
+
+.submit_button {
+  margin-top: 2rem;
+  padding: 0.5rem 2.5rem;
+  background-color: #38a169; 
+  color: #fff; 
+  font-size: 1rem;
+  text-align: center;
+  border-radius: 0.25rem; 
+}
+
+.success_message {
+  font-weight: 600; 
+  color: #10b981; 
+}
+
+.error_message {
+  font-weight: 600; 
+  color: #ef4444; 
+}
+/*  Enden på SignUp.jsx dokumentet */
+
+
+/*  Starten på courses.jsx   */
+.courses_header {
+  margin-top: 2rem; 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.courses_title {
+  margin-bottom: 1.5rem;
+  font-size: 2rem; 
+  font-weight: bold;
+}
+
+.filter_label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.75rem; 
+  font-weight: 600; 
+}
+
+.filter_select {
+  min-width: 200px;
+  border-radius: 0.25rem;
+  background-color: #e2e8f0; 
+}
+
+.courses_grid {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem; 
+}
+
+.course_card {
+  border-radius: 0.5rem; 
+  border: 1px solid #94a3b8; 
+  padding: 2rem 1.5rem; 
+}
+
+.course_category {
+  display: block;
+  text-align: right;
+  text-transform: capitalize;
+}
+
+.course_title {
+  margin-bottom: 0.5rem; 
+  font-size: 1rem; 
+  font-weight: bold;
+}
+
+.course_description {
+  margin-bottom: 1.5rem; 
+  font-size: 1rem; 
+  font-weight: 300; 
+}
+
+.course_link {
+  font-weight: 600; 
+  text-decoration: underline;
+}
+/*  Enden på courses.jsx   */
+
+
+/* Starten på lesson.jsx */
+.lesson_header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem; 
+}
+
+.course_title {
+  font-size: 1rem; 
+  font-weight: bold;
+}
+
+.course_link {
+  text-decoration: underline;
+}
+
+.course_category .category_bold {
+  font-weight: bold;
+}
+
+.lesson_title {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.lesson_preAmble {
+  margin-top: 1rem; 
+  font-weight: 600; 
+  line-height: 1.75;
+}
+
+.lesson_text {
+  margin-top: 1rem; 
+  font-weight: normal; 
+}
+
+.comments_section {
+  margin-top: 2rem; 
+}
+
+.comments_title {
+  margin-bottom: 1rem; 
+  font-size: 1.125rem;
+  font-weight: bold;
+}
+
+.comment_form .form_label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem; 
+}
+
+.label_text {
+  margin-bottom: 0.25rem; 
+  font-size: 0.875rem; 
+  font-weight: 600; 
+}
+
+.form_input, .form_textarea {
+  width: 100%;
+  border-radius: 0.25rem; 
+  background-color: #f1f5f9; 
+}
+
+.submit_button {
+  margin-top: 2rem; 
+  padding: 0.5rem 2.5rem; 
+  background-color: #38a169; 
+  color: #fff; 
+  font-size: 1rem; 
+  text-align: center;
+  border-radius: 0.25rem; 
+}
+
+
+.success_message {
+  font-weight: 600; 
+  color: #10b981; 
+}
+
+.error_message {
+  font-weight: 600; 
+  color: #ef4444; 
+}
+
+.comments_list {
+  margin-top: 2rem; 
+}
+
+.comment_item {
+  margin-bottom: 1.5rem; 
+  border: 1px solid #e2e8f0; 
+  padding: 1.5rem 1rem; 
+  border-radius: 0.25rem; 
+}
+
+.comment_name {
+  font-weight: bold;
+}
+
+.comment_text {
+  margin-top: 0.5rem;
+}
+/* enden på lesson.jsx */
+
+/* starten på [courseSlug][lessonSlug] index.jsx */
+.lesson_view_grid {
+  display: grid;
+  grid-template-columns: 250px minmax(20%, 1fr) 1fr;
+  gap: 16px;
+}
+
+.lesson_view_aside {
+  border-right: 1px solid #e2e8f0; 
+  padding-right: 1.5rem;
+}
+
+.lesson_heading {
+  margin-bottom: 1rem; 
+  font-size: 1rem; 
+  font-weight: bold;
+}
+
+.lesson_item {
+  font-size: 0.875rem; 
+  margin-bottom: 1rem; 
+  max-width: 95%;
+  width: 100%;
+  border-radius: 0.5rem; 
+  border: 1px solid #cbd5e1; 
+  padding: 0.5rem 1rem; 
+}
+
+.active_lesson {
+  background-color: #81e6d9;
+}
+
+.inactive_lesson {
+  background-color: transparent;
+}
+
+.lesson_link {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+/* enden på [courseSlug][lessonSlug] index.jsx */
+
+/* starten på [courseSlug] index.jsx */
+.course_overview_grid {
+  display: grid;
+  grid-template-columns: 250px minmax(20%, 1fr) 1fr;
+  gap: 16px;
+}
+
+.course_overview_aside,
+.enrollment_aside {
+  border-right: 1px solid #e2e8f0; 
+  padding-right: 1.5rem; 
+}
+
+.enrollment_aside {
+  border-left: 1px solid #e2e8f0;
+  padding-left: 1.5rem; 
+}
+
+.lesson_heading {
+  margin-bottom: 1rem; 
+  font-size: 1rem; 
+  font-weight: bold;
+}
+
+.lesson_item {
+  font-size: 0.875rem; 
+  margin-bottom: 1rem; 
+  max-width: 95%;
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 1px solid #cbd5e1;
+  padding: 0.5rem 1rem; 
+}
+
+.lesson_link {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.course_title {
+  font-size: 2rem; 
+  font-weight: bold;
+}
+
+.course_description {
+  margin-top: 1rem; 
+  font-weight: 600; 
+  line-height: 1.75;
+}
+
+.enrollment_item {
+  margin-bottom: 0.25rem;
+}
+/* enden på [courseSlug] index.jsx */
+

@@ -23,19 +23,19 @@ function Courses() {
   
     return (
       <>
-        <header className="mt-8 flex items-center justify-between">
-          <h2 className="mb-6 text-xl font-bold" data-testid="title">
+        <header className="courses_header">
+          <h2 className="courses_title" data-testid="title">
             Alle kurs
           </h2>
-          <label className="flex flex-col text-xs font-semibold" htmlFor="filter">
-            <span className="sr-only mb-1 block">Velg kategori:</span>
+          <label className="filter_label" htmlFor="filter">
+            <span className="sr_only">Velg kategori:</span>
             <select
               id="filter"
               name="filter"
               data-testid="filter"
               value={value}
               onChange={handleFilter}
-              className="min-w-[200px] rounded bg-slate-200"
+              className="filter_select"
             >
               <option value="">Alle</option>
               {categories.map((category) => (
@@ -46,31 +46,31 @@ function Courses() {
             </select>
           </label>
         </header>
-        <section className="mt-6 grid grid-cols-3 gap-8" data-testid="courses">
+        <section className="courses_grid" data-testid="courses">
           {data && data.length > 0 ? (
             data.map((course) => (
               <article
-                className="rounded-lg border border-slate-400 px-6 py-8"
+                className="course_card"
                 key={course.id}
                 data-testid="course_wrapper"
               >
-                <span className="block text-right capitalize">
+                <span className="course_category">
                   [{course.category}]
                 </span>
                 <h3
-                  className="mb-2 text-base font-bold"
+                  className="course_title"
                   data-testid="courses_title"
                 >
                   <a href={`/kurs/${course.slug}`}>{course.title}</a>
                 </h3>
                 <p
-                  className="mb-6 text-base font-light"
+                  className="course_description"
                   data-testid="courses_description"
                 >
                   {course.description}
                 </p>
                 <a
-                  className="font-semibold underline"
+                  className="course_link"
                   data-testid="courses_url"
                   href={`/kurs/${course.slug}`}
                 >

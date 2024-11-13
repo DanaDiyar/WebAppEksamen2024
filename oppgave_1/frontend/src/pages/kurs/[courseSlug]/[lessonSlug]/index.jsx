@@ -26,21 +26,21 @@ function LessonView() {
   const lesson = content.lessons.find((lesson) => lesson.slug === lessonSlug);
 
   return (
-    <div className="grid grid-cols-[250px_minmax(20%,1fr)_1fr] gap-16">
-      <aside className="border-r border-slate-200 pr-6">
-        <h3 className="mb-4 text-base font-bold">Leksjoner</h3>
+    <div className="lesson_view_grid">
+      <aside className="lesson_view_aside">
+        <h3 className="lesson_heading">Leksjoner</h3>
         <ul data-testid="lessons">
           {content.lessons.map((lesson) => (
             <li
-              className={`text-sm mb-4 w-full max-w-[95%] rounded-lg border border-slate-300 px-4 py-2 ${
-                lessonSlug === lesson.slug ? "bg-emerald-300" : "bg-transparent"
+              className={`lesson_item ${
+                lessonSlug === lesson.slug ? "active_lesson" : "inactive_lesson"
               }`}
               key={lesson.id}
             >
               <Link
                 href={`/kurs/${courseSlug}/${lesson.slug}`}
                 data-testid="lesson_url"
-                className="block h-full w-full"
+                className="lesson_link"
               >
                 {lesson.title}
               </Link>

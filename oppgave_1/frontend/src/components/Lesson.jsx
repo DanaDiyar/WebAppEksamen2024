@@ -56,22 +56,22 @@ import { getLesson, getComments, createComment, getCourse } from "../services/co
   
     return (
       <div>
-        <div className="flex justify-between">
-          <h3 data-testid="course_title" className="mb-6 text-base font-bold">
-            <a className="underline" href={`/kurs/${course?.slug}`}>
+        <div className="lesson_header">
+          <h3 data-testid="course_title" className="course_title">
+            <a className="course_link" href={`/kurs/${course?.slug}`}>
               {course?.title}
             </a>
           </h3>
-          <span data-testid="course_category">
-            Kategori: <span className="font-bold">{course?.category}</span>
+          <span className="course_category" data-testid="course_category" >
+            Kategori: <span className="category_bold">{course?.category}</span>
           </span>
         </div>
-        <h2 className="text-2xl font-bold" data-testid="lesson_title">
+        <h2 className="lesson_title" data-testid="lesson_title">
           {lesson?.title}
         </h2>
         <p
           data-testid="lesson_preAmble"
-          className="mt-4 font-semibold leading-relaxed"
+          className="lesson_preAmble"
         >
           {lesson?.preAmble}
         </p>
@@ -79,19 +79,19 @@ import { getLesson, getComments, createComment, getCourse } from "../services/co
           lesson.text.map((text) => (
             <p
               data-testid="lesson_text"
-              className="mt-4 font-normal"
+              className="lesson_text"
               key={text.id}
             >
               {text.text}
             </p>
           ))}
         <section data-testid="comments">
-          <h4 className="mt-8 mb-4 text-lg font-bold">
+          <h4 className="comments_section">
             Kommentarer ({lessonComments?.length})
           </h4>
-          <form data-testid="comment_form" onSubmit={handleSubmit} noValidate>
-            <label className="mb-4 flex flex-col" htmlFor="name">
-              <span className="mb-1 text-sm font-semibold">Navn*</span>
+          <form className="comment_form" data-testid="comment_form" onSubmit={handleSubmit} noValidate>
+            <label className="form_label" htmlFor="name">
+              <span className="label_text">Navn*</span>
               <input
                 data-testid="form_name"
                 type="text"
@@ -99,11 +99,11 @@ import { getLesson, getComments, createComment, getCourse } from "../services/co
                 id="name"
                 value={name}
                 onChange={handleName}
-                className="w-full rounded bg-slate-100"
+                className="form_input"
               />
             </label>
-            <label className="mb-4 flex flex-col" htmlFor="comment">
-              <span className="mb-1 text-sm font-semibold">
+            <label className="form_label" htmlFor="comment">
+              <span className="label_text">
                 Legg til kommentar*
               </span>
               <textarea
@@ -113,42 +113,42 @@ import { getLesson, getComments, createComment, getCourse } from "../services/co
                 id="comment"
                 value={comment}
                 onChange={handleComment}
-                className="w-full rounded bg-slate-100"
+                className="form_textarea"
                 cols="30"
               />
             </label>
             <button
-              className="rounded bg-emerald-600 px-10 py-2 text-center text-base text-white"
+              className="submit_button"
               data-testid="form_submit"
               type="submit"
             >
               Legg til kommentar
             </button>
             {formError ? (
-              <p className="font-semibold text-red-500" data-testid="form_error">
+              <p className="error message" data-testid="form_error">
                 Fyll ut alle felter med *
               </p>
             ) : null}
             {success ? (
               <p
-                className="font-semibold text-emerald-500"
+                className="success_message"
                 data-testid="form_success"
               >
                 Skjema sendt
               </p>
             ) : null}
           </form>
-          <ul className="mt-8" data-testid="comments_list">
+          <ul className="comments_list" data-testid="comments_list">
             {lessonComments?.length > 0
               ? lessonComments.map((c) => (
                   <li
-                    className="mb-6 rounded border border-slate-200 px-4 py-6"
+                    className="comment_item"
                     key={c.id}
                   >
-                    <h5 data-testid="user_comment_name" className="font-bold">
+                    <h5 data-testid="user_comment_name" className="comment_name">
                       {c.createdBy.name}
                     </h5>
-                    <p data-testid="user_comment">{c.comment}</p>
+                    <p className="comment_text" data-testid="user_comment">{c.comment}</p>
                   </li>
                 ))
               : null}

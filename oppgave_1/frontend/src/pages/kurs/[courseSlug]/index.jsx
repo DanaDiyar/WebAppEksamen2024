@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 import { useState, useEffect } from "react";
 import { users } from "../../../data/users";
 import { getCourse } from "@/services/courseService";
+ 
 
 
 function CourseOverview() {
@@ -25,19 +26,19 @@ function CourseOverview() {
   if (!content) return <p>Loading...</p>;
 
   return (
-    <div className="grid grid-cols-[250px_minmax(20%,1fr)_1fr] gap-16">
-      <aside className="border-r border-slate-200 pr-6">
-        <h3 className="mb-4 text-base font-bold">Leksjoner</h3>
+    <div className="course_overview_grid">
+      <aside className="course_overview_aside">
+        <h3 className="lesson_heading">Leksjoner</h3>
         <ul data-testid="lessons">
           {content.lessons.map((lesson) => (
             <li
-              className="text-sm mb-4 w-full max-w-[95%] rounded-lg border border-slate-300 px-4 py-2"
+              className="lesson_item"
               key={lesson.id}
             >
               <Link
                 href={`/kurs/${courseSlug}/${lesson.slug}`}
                 data-testid="lesson_url"
-                className="block h-full w-full"
+                className="lesson_link"
               >
                 {lesson.title}
               </Link>
@@ -46,18 +47,18 @@ function CourseOverview() {
         </ul>
       </aside>
       <section>
-        <h2 className="text-2xl font-bold" data-testid="course_title">
+        <h2 className="course_title" data-testid="course_title">
           {content.title}
         </h2>
-        <p className="mt-4 font-semibold leading-relaxed" data-testid="course_description">
+        <p className="course_description" data-testid="course_description">
           {content.description}
         </p>
       </section>
-      <aside data-testid="enrollments" className="border-l border-slate-200 pl-6">
-        <h3 className="mb-4 text-base font-bold">Deltakere</h3>
+      <aside data-testid="enrollments" className="enrollment_aside">
+        <h3 className="lesson_heading">Deltakere</h3>
         <ul data-testid="course_enrollments">
           {users.map((user) => (
-            <li className="mb-1" key={user.id}>
+            <li className="enrollment-item" key={user.id}>
               {user.name}
             </li>
           ))}

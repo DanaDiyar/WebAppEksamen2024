@@ -34,15 +34,15 @@ function SignUp() {
     };
   
     return (
-      <section className="mx-auto max-w-xl" data-testid="sign_up">
-        <h2 className="mb-4 text-xl font-bold" data-testid="title">
+      <section className="sign_up_container" data-testid="sign_up">
+        <h2 className="title" data-testid="title">
           Ny bruker
         </h2>
-        <form data-testid="form" onSubmit={handleSubmit} noValidate>
-          <label className="mb-4 flex flex-col" htmlFor="name">
-            <span className="mb-1 font-semibold">Navn*</span>
+        <form className="form" data-testid="form" onSubmit={handleSubmit} noValidate>
+          <label className="form_label" htmlFor="name">
+            <span className="label_text">Navn*</span>
             <input
-              className="rounded"
+              className="input"
               data-testid="form_name"
               type="text"
               name="name"
@@ -51,10 +51,10 @@ function SignUp() {
               onChange={handleChange}
             />
           </label>
-          <label className="mb-4 flex flex-col" htmlFor="email">
-            <span className="mb-1 font-semibold">Epost*</span>
+          <label className="form_label" htmlFor="email">
+            <span className="label_text">Epost*</span>
             <input
-              className="rounded"
+              className="input"
               data-testid="form_email"
               type="email"
               name="email"
@@ -63,9 +63,9 @@ function SignUp() {
               onChange={handleChange}
             />
           </label>
-          <label className="flex items-center gap-2" htmlFor="admin">
+          <label className="checkbox_label" htmlFor="admin">
             <input
-              className="rounded"
+              className="checkbox"
               data-testid="form_admin"
               type="checkbox"
               name="admin"
@@ -73,23 +73,23 @@ function SignUp() {
               onChange={handleChange}
               checked={fields?.admin}
             />
-            <span className="font-semibold">Admin</span>
+            <span className="checkbox_text">Admin</span>
           </label>
           <button
-            className="mt-8 rounded bg-emerald-600 px-10 py-2 text-center text-base text-white"
+            className="submit_button"
             data-testid="form_submit"
             type="submit"
           >
             Lag ny bruker
           </button>
           {formError ? (
-            <p className="font-semibold text-red-500" data-testid="form_error">
+            <p className="error_message" data-testid="form_error">
               Fyll ut alle felter med *
             </p>
           ) : null}
           {success ? (
             <p
-              className="font-semibold text-emerald-500"
+              className="success_message"
               data-testid="form_success"
             >
               Skjema sendt

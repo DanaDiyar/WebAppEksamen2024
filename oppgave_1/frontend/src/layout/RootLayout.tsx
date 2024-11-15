@@ -32,15 +32,15 @@ export default function RootLayout({
 }>) {
   return (
     <div
-        className="mx-auto grid min-h-screen w-full max-w-7xl grid-rows-[auto_minmax(900px,_1fr)_30px]"
+        className="layout"
         data-testid="layout"
       >
-        <nav className="mt-6 mb-12 flex justify-between">
-          <h1 className="text-lg font-bold uppercase" data-testid="logo">
+        <nav className="layout_nav">
+          <h1 className="logo" data-testid="logo">
             <Link href="/">Mikro LMS</Link>
           </h1> 
-          <ul className="flex gap-8" data-testid="nav">
-            <li className="text-base font-semibold" data-testid="nav_courses">
+          <ul className="nav_links" data-testid="nav">
+            <li className="nav_item" data-testid="nav_courses">
             <Link href="/courses">Kurs</Link>
             </li>
             <li className="text-base font-semibold" data-testid="nav_new">
@@ -48,10 +48,10 @@ export default function RootLayout({
             </li>
           </ul>
         </nav>
-        <main className="h-full">
+        <main className="layout_main">
           {children}  { /*SRC: kilde: https://chatgpt.com*/}
         </main>
-        <footer className="flex justify-between" data-testid="footer">
+        <footer className="layout_footer" data-testid="footer">
           <p>Mikro LMS AS, 2024</p>
           <p>99 00 00 00, mail@lms.no</p>
         </footer>

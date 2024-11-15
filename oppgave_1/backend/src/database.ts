@@ -2,36 +2,57 @@
 
 import Database from 'better-sqlite3';
 
-const db = new Database('./database.sqlite');
+const db = new Database('database.sqlite');
 
-// Opprett tabellene hvis de ikke finnes
+// Dropper tabell om de allerede eksisterer
+db.exec(`DROP TABLE IF EXISTS Users`);
+db.exec(`DROP TABLE IF EXISTS Courses`);
+db.exec(`DROP TABLE IF EXISTS Lessons`);
+db.exec(`DROP TABLE IF EXISTS Comments`);
+
+// Opprett Users-tabellen
 db.exec(`
-  CREATE TABLE IF NOT EXISTS Users (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
+  CREATE TABLE Users (
+    id TEXT PRIMARY KEY,
     username TEXT NOT NULL,
     email TEXT NOT NULL UNIQUE
   );
+`);
 
-  CREATE TABLE IF NOT EXISTS Courses (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
+// Opprett Courses-tabellen
+db.exec(`
+  CREATE TABLE Courses (
+    id TEXT PRIMARY KEY,
     title TEXT NOT NULL,
+    slug TEXT NOT NULL UNIQUE, -- slug må være unik for kurs
+    description TEXT,
     category TEXT
   );
+`);
 
-  CREATE TABLE IF NOT EXISTS Lessons (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    courseId INTEGER,
+// Opprett Lessons-tabellen
+db.exec(`
+  CREATE TABLE Lessons (
+    id TEXT PRIMARY KEY,
+    course_id TEXT,
     title TEXT NOT NULL,
-    content TEXT,
-    FOREIGN KEY(courseId) REFERENCES Courses(id) ON DELETE CASCADE
+    slug TEXT NOT NULL UNIQUE, -- slug må være unik for leksjoner
+    description TEXT,
+    text TEXT,
+    FOREIGN KEY (course_id) REFERENCES Courses(id) ON DELETE CASCADE
   );
+`);
 
-  CREATE TABLE IF NOT EXISTS Comments (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    lessonId INTEGER,
-    content TEXT NOT NULL,
-    FOREIGN KEY(lessonId) REFERENCES Lessons(id) ON DELETE CASCADE
+// Opprett Comments-tabellen
+db.exec(`
+  CREATE TABLE Comments (
+    id TEXT PRIMARY KEY,
+    lesson_slug TEXT NOT NULL,
+    created_by TEXT,
+    comment TEXT NOT NULL,
+    FOREIGN KEY (lesson_slug) REFERENCES Lessons(slug) ON DELETE CASCADE
   );
 `);
 
 export default db;
+

@@ -14,10 +14,11 @@ export const getCourses = (c: Context) => {
 };
 
 export const createCourse = async (c: Context) => {
-  const { title, category } = await c.req.json();
-  const info = db.prepare('INSERT INTO Courses (title, category) VALUES (?, ?)').run(title, category);
-  return c.json({ id: info.lastInsertRowid, title, category });
+  const { title, category, slug, description } = await c.req.json();
+  const info = db.prepare('INSERT INTO Courses (title, category, slug, description) VALUES (?, ?, ?, ?)').run(title, category, slug, description);
+  return c.json({ id: info.lastInsertRowid, title, category, slug, description });
 };
+
 
 export const deleteCourse = (c: Context) => {
   const id = Number(c.req.param('id'));

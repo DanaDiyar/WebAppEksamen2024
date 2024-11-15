@@ -51,17 +51,21 @@ code {
 }
 
 .input, .checkbox {
-  border-radius: 0.25rem; 
+  border-radius: 5px;
+  border-width: 1px; 
+  border-style: solid; 
 }
 
-.submit_button {
+button.submit_button {
   margin-top: 2rem;
   padding: 0.5rem 2.5rem;
   background-color: #38a169; 
-  color: #fff; 
   font-size: 1rem;
   text-align: center;
-  border-radius: 0.25rem; 
+  border-radius: 5px; 
+  border-width: 1px; 
+  border-style: solid; 
+  cursor: pointer;
 }
 
 .success_message {

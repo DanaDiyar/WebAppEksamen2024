@@ -58,7 +58,7 @@ function CourseOverview() {
         <h3 className="lesson_heading">Deltakere</h3>
         <ul data-testid="course_enrollments">
           {users.map((user) => (
-            <li className="enrollment-item" key={user.id}>
+            <li className="enrollment_item" key={user.id}>
               {user.name}
             </li>
           ))}

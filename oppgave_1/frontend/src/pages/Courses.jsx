@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { courses } from "../data/courses";
 import { categories } from "../data/categories";
-import { useParams, useRouter } from "next/navigation";
 
 
 function Courses() {
